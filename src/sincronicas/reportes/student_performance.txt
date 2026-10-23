@@ -1,0 +1,36 @@
+REPORTE DEL DATAFRAME
+============================================================
+Filas: 1000
+Columnas: 8
+Duplicados: 1
+
+Columnas y tipos:
+- is_male: bool
+- ethnicity: object
+- parental_level_of_education: int64
+- has_standard_lunch: bool
+- has_completed_preparation_test: bool
+- reading_score: int64
+- writing_score: int64
+- has_passed_math_exam: int64
+
+Valores nulos por columna:
+- is_male: 0
+- ethnicity: 0
+- parental_level_of_education: 0
+- has_standard_lunch: 0
+- has_completed_preparation_test: 0
+- reading_score: 0
+- writing_score: 0
+- has_passed_math_exam: 0
+
+Estadísticas numéricas:
+       parental_level_of_education  reading_score  writing_score  has_passed_math_exam
+count                     1000.000       1000.000       1000.000              1000.000
+mean                         2.298         70.382         69.140                 0.696
+std                          1.755         14.107         15.026                 0.460
+min                          0.000         25.000         15.000                 0.000
+25%                          1.000         61.000         59.000                 0.000
+50%                          2.000         70.500         70.000                 1.000
+75%                          4.000         80.000         80.000                 1.000
+max                          5.000        100.000        100.000                 1.000
