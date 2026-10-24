@@ -79,3 +79,18 @@ La estructura permite mantener separadas las clases reutilizables, el notebook d
 Durante el desarrollo se utilizaron commits de Git para registrar avances, integrar los cambios y mantener sincronizado  el repositorio remoto de GitHub.
 
 También se corrigió un conflicto en el archivo del notebook para recuperar su estructura JSON válida y comprobar que pudiera abrirse y ejecutarse correctamente desde VS Code.
+
+### Transformación de datos y generación del reporte
+
+En el notebook `src/sincronicas/Semana_1SINC.ipynb` se coordina el flujo de trabajo entre las clases de carga y generación de reportes.
+
+El proceso consiste en:
+
+1. Obtener desde Hugging Face el conjunto de datos `mstz/student_performance` y cargarlo en un DataFrame de pandas mediante la clase `HFDatasetLoader`.
+2. Aplicar una transformación mínima, filtrando los registros cuya puntuación de lectura (`reading_score`) sea mayor o igual a 80.
+3. Pasar el DataFrame transformado a la clase `Reportes` para generar el resumen descriptivo.
+4. Mostrar el resultado y guardarlo en `src/sincronicas/reportes/student_performance.txt`.
+
+La transformación reduce el conjunto original de 1.000 registros a 261 registros que cumplen la condición del filtro. De esta manera, el reporte generado corresponde a los datos transformados y no al conjunto original completo.
+
+Este flujo demuestra la separación de responsabilidades: la clase de carga obtiene los datos, el notebook realiza la transformación y la clase de reportes genera el resumen en formato `.txt`.
